@@ -1,0 +1,35 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{ site.title }}</h3>
+                <p>{{ site.description }}</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{{ "/" | relative_url }}">Home</a></li>
+                    <li><a href="{{ "/portfolio/" | relative_url }}">Portfolio</a></li>
+                    <li><a href="{{ "/about/" | relative_url }}">About</a></li>
+                    <li><a href="{{ "/contact/" | relative_url }}">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="{{ "/portfolio/?filter=professional" | relative_url }}">Professional</a></li>
+                    <li><a href="{{ "/portfolio/?filter=illustration" | relative_url }}">Illustration</a></li>
+                    <li><a href="{{ "/portfolio/?filter=branding" | relative_url }}">Branding</a></li>
+                    <li><a href="{{ "/portfolio/?filter=academic" | relative_url }}">Academic</a></li>
+                    <li><a href="{{ "/portfolio/?filter=personal" | relative_url }}">Personal</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,88 @@
+# Site settings
+title: L.E. Portfolio
+email: contact@example.com
+description: >-
+  Professional illustration portfolio showcasing space, NASA, and technical design work
+baseurl: ""
+url: "https://kenalba.github.io/art-portfolio-jekyll-site"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Include directories for static files
+include:
+  - collections
+  - admin
+
+# Collections
+collections_dir: collections
+collections:
+  professional:
+    output: true
+    permalink: /:collection/:name/
+  illustration:
+    output: true
+    permalink: /:collection/:name/
+  branding:
+    output: true
+    permalink: /:collection/:name/
+  academic:
+    output: true
+    permalink: /:collection/:name/
+  personal:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: "collections/_professional"
+      type: "professional"
+    values:
+      layout: "project"
+      category: "professional"
+  - scope:
+      path: "collections/_illustration"
+      type: "illustration"
+    values:
+      layout: "project"
+      category: "illustration"
+  - scope:
+      path: "collections/_branding"
+      type: "branding"
+    values:
+      layout: "project"
+      category: "branding"
+  - scope:
+      path: "collections/_academic"
+      type: "academic"
+    values:
+      layout: "project"
+      category: "academic"
+  - scope:
+      path: "collections/_personal"
+      type: "personal"
+    values:
+      layout: "project"
+      category: "personal"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - CNAME
+  - .gitignore
+  - .git/
+  - drive_files/  # Don't publish the source images folder

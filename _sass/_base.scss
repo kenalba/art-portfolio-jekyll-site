@@ -1,0 +1,106 @@
+// Reset and base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size-base;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family-base;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $bg-color;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    margin-bottom: $spacing-sm;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.125rem; }
+
+p {
+    margin-bottom: $spacing-sm;
+}
+
+a {
+    color: $secondary-color;
+    text-decoration: none;
+    transition: color $transition-base;
+
+    &:hover {
+        color: darken($secondary-color, 15%);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Utility classes
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+// Buttons
+.btn {
+    display: inline-block;
+    padding: $spacing-xs $spacing-md;
+    border: $border-width solid transparent;
+    border-radius: $border-radius;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all $transition-base;
+    
+    &.btn-primary {
+        background-color: $secondary-color;
+        color: white;
+        
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+            color: white;
+        }
+    }
+    
+    &.btn-outline {
+        border-color: $secondary-color;
+        color: $secondary-color;
+        
+        &:hover {
+            background-color: $secondary-color;
+            color: white;
+        }
+    }
+}

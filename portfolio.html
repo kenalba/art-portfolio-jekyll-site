@@ -1,0 +1,40 @@
+---
+layout: page
+title: Portfolio
+permalink: /portfolio/
+---
+
+<div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="professional">Professional</button>
+    <button class="filter-btn" data-filter="illustration">Illustration</button>
+    <button class="filter-btn" data-filter="branding">Branding</button>
+    <button class="filter-btn" data-filter="academic">Academic</button>
+    <button class="filter-btn" data-filter="personal">Personal</button>
+</div>
+
+<div class="project-grid" id="portfolio-grid">
+    {% assign all_projects = site.professional | concat: site.illustration | concat: site.branding | concat: site.academic | concat: site.personal | sort: "year" | reverse %}
+    {% for project in all_projects %}
+        <article class="project-card" data-category="{{ project.category }}" data-tags="{{ project.tags | join: ',' }}">
+            <a href="{{ project.url | relative_url }}">
+                {% if project.hero_image %}
+                    <img src="{{ project.hero_image | relative_url }}" alt="{{ project.title }}" loading="lazy">
+                {% endif %}
+                <div class="project-info">
+                    <h3>{{ project.title }}</h3>
+                    <p class="project-year">{{ project.year }}</p>
+                    <p class="project-medium">{{ project.medium }}</p>
+                    <p class="project-category">{{ project.category | capitalize }}</p>
+                    {% if project.tags %}
+                        <div class="project-tags">
+                            {% for tag in project.tags limit: 3 %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </a>
+        </article>
+    {% endfor %}
+</div>

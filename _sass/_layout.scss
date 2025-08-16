@@ -1,0 +1,147 @@
+// Header and Navigation
+.site-header {
+    background-color: $bg-color;
+    border-bottom: $border-width solid $border-color;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    padding: $spacing-sm 0;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.navbar-brand {
+    font-family: $font-family-heading;
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+    
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    
+    .icon-bar {
+        width: 25px;
+        height: 3px;
+        background-color: $primary-color;
+        margin: 3px 0;
+        transition: $transition-base;
+    }
+    
+    @media (max-width: $breakpoint-md - 1px) {
+        display: flex;
+    }
+}
+
+.navbar-collapse {
+    @media (max-width: $breakpoint-md - 1px) {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $bg-color;
+        border-top: $border-width solid $border-color;
+        
+        &.show {
+            display: block;
+        }
+    }
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    @media (max-width: $breakpoint-md - 1px) {
+        flex-direction: column;
+        padding: $spacing-sm;
+    }
+}
+
+.nav-item {
+    margin-left: $spacing-md;
+    
+    @media (max-width: $breakpoint-md - 1px) {
+        margin: $spacing-xs 0;
+        margin-left: 0;
+    }
+}
+
+.nav-link {
+    color: $text-color;
+    font-weight: $font-weight-normal;
+    transition: color $transition-base;
+    
+    &:hover,
+    &.active {
+        color: $secondary-color;
+    }
+}
+
+// Main content
+.site-content {
+    min-height: calc(100vh - 200px);
+}
+
+// Footer
+.site-footer {
+    background-color: $primary-color;
+    color: white;
+    padding: $spacing-xl 0 $spacing-lg;
+    margin-top: $spacing-xxl;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+}
+
+.footer-section {
+    h3, h4 {
+        color: white;
+        margin-bottom: $spacing-sm;
+    }
+    
+    ul {
+        list-style: none;
+        
+        li {
+            margin-bottom: $spacing-xs;
+            
+            a {
+                color: rgba(white, 0.8);
+                
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: $spacing-lg;
+    border-top: 1px solid rgba(white, 0.2);
+    color: rgba(white, 0.8);
+}

@@ -1,0 +1,118 @@
+---
+layout: default
+---
+
+<article class="project">
+    <div class="container">
+        <header class="project-header">
+            <h1>{{ page.title }}</h1>
+            <div class="project-meta">
+                <span class="project-year">{{ page.year }}</span>
+                <span class="project-medium">{{ page.medium }}</span>
+                <span class="project-category">{{ page.category | capitalize }}</span>
+            </div>
+            {% if page.description %}
+                <div class="project-description">
+                    <p>{{ page.description }}</p>
+                </div>
+            {% endif %}
+            {% if page.tags %}
+                <div class="project-tags">
+                    {% for tag in page.tags %}
+                        <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </header>
+
+        <div class="project-gallery">
+            {% comment %}
+            New flexible gallery system - supports mixed content blocks:
+            - type: "image" - single image
+            - type: "carousel" - image carousel  
+            - type: "text" - text block
+            {% endcomment %}
+            
+            {% if page.gallery %}
+                {% for block in page.gallery %}
+                    {% case block.type %}
+                        {% when "image" %}
+                            <figure class="gallery-item">
+                                <img src="{{ block.filename }}" alt="{{ block.alt | default: page.title }}" loading="lazy">
+                                {% if block.caption %}
+                                    <figcaption>{{ block.caption }}</figcaption>
+                                {% endif %}
+                            </figure>
+                            
+                        {% when "carousel" %}
+                            {% include carousel.html images=block.images project_path="" %}
+                            
+                        {% when "text" %}
+                            <div class="gallery-text">
+                                {% if block.title %}
+                                    <h3>{{ block.title }}</h3>
+                                {% endif %}
+                                {{ block.content | markdownify }}
+                            </div>
+                    {% endcase %}
+                {% endfor %}
+                
+            {% comment %}
+            Fallback to original image system for backward compatibility
+            {% endcomment %}
+            {% elsif page.images %}
+                {% for image in page.images %}
+                    <figure class="gallery-item">
+                        <img src="{{ image.filename | relative_url }}" alt="{{ image.alt }}" loading="lazy">
+                        {% if image.caption %}
+                            <figcaption>{{ image.caption }}</figcaption>
+                        {% endif %}
+                    </figure>
+                {% endfor %}
+            {% elsif page.hero_image %}
+                <figure class="gallery-item">
+                    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+                </figure>
+            {% endif %}
+        </div>
+
+        {% if page.extensions %}
+            <div class="project-extensions">
+                {% for extension in page.extensions %}
+                    <div class="extension-field">
+                        <strong>{{ extension[0] | replace: "_", " " | capitalize }}:</strong>
+                        <span>{{ extension[1] }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <nav class="project-nav">
+            <a href="{{ "/portfolio/" | relative_url }}" class="btn btn-outline">Back to Portfolio</a>
+            
+            {% assign collection_projects = site[page.collection] | sort: "date" %}
+            {% assign current_index = nil %}
+            {% for project in collection_projects %}
+                {% if project.url == page.url %}
+                    {% assign current_index = forloop.index0 %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+            
+            {% if current_index %}
+                {% assign prev_index = current_index | minus: 1 %}
+                {% assign next_index = current_index | plus: 1 %}
+                
+                {% if prev_index >= 0 %}
+                    {% assign prev_project = collection_projects[prev_index] %}
+                    <a href="{{ prev_project.url | relative_url }}" class="btn btn-outline">← Previous</a>
+                {% endif %}
+                
+                {% if next_index < collection_projects.size %}
+                    {% assign next_project = collection_projects[next_index] %}
+                    <a href="{{ next_project.url | relative_url }}" class="btn btn-outline">Next →</a>
+                {% endif %}
+            {% endif %}
+        </nav>
+    </div>
+</article>

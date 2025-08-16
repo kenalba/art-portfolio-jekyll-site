@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">{{ site.title }}</h1>
+        <p class="hero-subtitle">{{ site.description }}</p>
+        <a href="{{ "/portfolio/" | relative_url }}" class="hero-cta">View Portfolio</a>
+    </div>
+</section>
+
+<section class="featured-work">
+    <div class="container">
+        <h2>Featured Work</h2>
+        <div class="project-grid">
+            {% assign all_projects = site.professional | concat: site.illustration | concat: site.branding | concat: site.academic | concat: site.personal %}
+            {% assign featured_projects = all_projects | where: "featured", true | sort: "year" | reverse %}
+            {% for project in featured_projects limit: 6 %}
+                <article class="project-card" data-category="{{ project.category }}">
+                    <a href="{{ project.url | relative_url }}">
+                        {% if project.hero_image %}
+                            <img src="{{ project.hero_image | relative_url }}" alt="{{ project.title }}" loading="lazy">
+                        {% endif %}
+                        <div class="project-info">
+                            <h3>{{ project.title }}</h3>
+                            <p class="project-year">{{ project.year }}</p>
+                            <p class="project-medium">{{ project.medium }}</p>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+        <div class="view-all">
+            <a href="{{ "/portfolio/" | relative_url }}" class="btn btn-outline">View All Work</a>
+        </div>
+    </div>
+</section>

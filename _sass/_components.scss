@@ -1,0 +1,563 @@
+// Hero Section - Clean, minimal like Ellee's portfolio
+.hero {
+    background: $bg-color;
+    color: $text-color;
+    padding: $spacing-xxl 0 $spacing-xl 0;
+    text-align: center;
+    border-bottom: 1px solid $border-color;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: $spacing-sm;
+    letter-spacing: -0.02em;
+    
+    @media (max-width: $breakpoint-md) {
+        font-size: 2.5rem;
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: $spacing-xl;
+    color: $text-light;
+    font-weight: 400;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-cta {
+    display: inline-block;
+    background-color: $primary-color;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: $font-weight-medium;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    transition: all $transition-base;
+    border: 1px solid $primary-color;
+    
+    &:hover {
+        background-color: transparent;
+        color: $primary-color;
+    }
+}
+
+// Project Grid - Clean grid like Ellee's portfolio
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: $spacing-xl;
+    
+    @media (max-width: $breakpoint-md) {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid $border-color;
+    transition: all $transition-base;
+    width: 100%;
+    max-width: 400px;
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px; // Ensures consistent card height
+    
+    &:hover {
+        border-color: $secondary-color;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+    
+    a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+        flex-shrink: 0;
+    }
+}
+
+.project-info {
+    padding: 24px;
+    flex-grow: 1; // Takes up remaining space
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; // Aligns content to bottom
+    
+    h3 {
+        font-size: 1.25rem;
+        font-weight: $font-weight-medium;
+        margin-bottom: 8px;
+        color: $text-color;
+        line-height: 1.3;
+    }
+    
+    .project-year {
+        font-size: 0.9rem;
+        color: $secondary-color;
+        font-weight: $font-weight-medium;
+        margin-bottom: 4px;
+    }
+    
+    .project-medium,
+    .project-category {
+        font-size: 0.85rem;
+        color: $text-light;
+        margin-bottom: 4px;
+    }
+}
+
+.project-tags {
+    margin-top: 12px;
+    
+    .tag {
+        display: inline-block;
+        background-color: rgba($secondary-color, 0.1);
+        color: $secondary-color;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: $font-weight-medium;
+        margin-right: 6px;
+        margin-bottom: 4px;
+    }
+}
+
+// Featured Work Section - Clean section styling
+.featured-work {
+    padding: 80px 0;
+    background-color: $bg-light;
+    
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: $font-weight-medium;
+        margin-bottom: $spacing-xl;
+        color: $text-color;
+        letter-spacing: -0.01em;
+    }
+}
+
+.view-all {
+    text-align: center;
+    margin-top: $spacing-xl;
+}
+
+// Portfolio Filters - Clean filter buttons like Ellee's design
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+    padding: 32px 0;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid transparent;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    color: $text-light;
+    transition: all $transition-base;
+    
+    &:hover {
+        color: $primary-color;
+        background-color: rgba($primary-color, 0.05);
+    }
+    
+    &.active {
+        background-color: $primary-color;
+        color: white;
+        border-color: $primary-color;
+    }
+}
+
+// Project Detail Page
+.project {
+    padding: $spacing-xl 0;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    h1 {
+        color: $primary-color;
+        margin-bottom: $spacing-md;
+    }
+}
+
+.project-meta {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+    
+    @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        gap: $spacing-xs;
+    }
+    
+    span {
+        color: $text-light;
+        font-size: 0.9rem;
+        
+        &:not(:last-child)::after {
+            content: "•";
+            margin-left: $spacing-md;
+            color: $border-color;
+            
+            @media (max-width: $breakpoint-sm) {
+                display: none;
+            }
+        }
+    }
+}
+
+.project-description {
+    max-width: 600px;
+    margin: 0 auto $spacing-md;
+    text-align: center;
+    
+    p {
+        font-size: 1.1rem;
+        color: $text-light;
+    }
+}
+
+.project-gallery {
+    margin: $spacing-xl 0;
+}
+
+.gallery-item {
+    margin-bottom: $spacing-lg;
+    
+    img {
+        margin: 0 auto;
+        border-radius: $border-radius;
+        box-shadow: $shadow-md;
+    }
+    
+    figcaption {
+        text-align: center;
+        margin-top: $spacing-sm;
+        color: $text-light;
+        font-style: italic;
+    }
+}
+
+.gallery-text {
+    max-width: 700px;
+    margin: $spacing-xl auto;
+    padding: $spacing-lg;
+    background-color: rgba($bg-light, 0.5);
+    border-radius: $border-radius;
+    border-left: 4px solid $secondary-color;
+    
+    h3 {
+        color: $primary-color;
+        margin-bottom: $spacing-md;
+        font-weight: $font-weight-medium;
+    }
+    
+    p {
+        color: $text-color;
+        line-height: 1.6;
+        margin-bottom: $spacing-sm;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.project-extensions {
+    background-color: $bg-light;
+    padding: $spacing-lg;
+    border-radius: $border-radius;
+    margin: $spacing-xl 0;
+}
+
+.extension-field {
+    margin-bottom: $spacing-sm;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    strong {
+        color: $primary-color;
+    }
+}
+
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacing-xl;
+    padding-top: $spacing-lg;
+    border-top: $border-width solid $border-color;
+    
+    @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        gap: $spacing-md;
+    }
+}
+
+// Page Layout
+.page {
+    padding: $spacing-xl 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    h1 {
+        color: $primary-color;
+    }
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    
+    h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: $primary-color;
+        font-weight: $font-weight-medium;
+        border-bottom: 2px solid rgba($secondary-color, 0.2);
+        padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        color: $text-color;
+        font-weight: $font-weight-medium;
+    }
+    
+    p {
+        margin-bottom: 1.25rem;
+        color: $text-color;
+    }
+    
+    ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: $text-color;
+        }
+    }
+    
+    // First paragraph after title should have larger spacing
+    > p:first-child {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: $text-light;
+    }
+}
+
+// Image Carousel Component
+.image-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: $spacing-lg 0;
+    background: white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    
+    &.gallery-mode {
+        margin: 0 auto $spacing-lg;
+    }
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    position: relative;
+    
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        min-height: 400px;
+        max-height: 600px;
+        
+        @media (max-width: $breakpoint-md) {
+            min-height: 250px;
+            max-height: 400px;
+        }
+    }
+}
+
+.carousel-captions {
+    position: relative;
+    min-height: 3rem; // Prevents layout jumping when captions change
+}
+
+.carousel-caption {
+    display: none;
+    padding: $spacing-md;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    color: $text-light;
+    background-color: rgba($bg-light, 0.5);
+    border-bottom: 1px solid $border-color;
+    
+    &.active {
+        display: block;
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+        padding: $spacing-sm;
+        font-size: 0.85rem;
+    }
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-base;
+    z-index: 10;
+    
+    &:hover {
+        background: rgba(255,255,255,1);
+        box-shadow: $shadow-sm;
+    }
+    
+    &.prev {
+        left: $spacing-md;
+    }
+    
+    &.next {
+        right: $spacing-md;
+    }
+    
+    &::before {
+        content: '';
+        border: solid $primary-color;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+    }
+    
+    &.prev::before {
+        transform: rotate(135deg);
+        margin-left: 2px;
+    }
+    
+    &.next::before {
+        transform: rotate(-45deg);
+        margin-right: 2px;
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+        width: 36px;
+        height: 36px;
+        
+        &::before {
+            padding: 3px;
+        }
+        
+        &.prev, &.next {
+            &::before {
+                border-width: 0 1.5px 1.5px 0;
+            }
+        }
+    }
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: $spacing-md;
+    background: rgba(255,255,255,0.95);
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        background: rgba($primary-color, 0.3);
+        cursor: pointer;
+        transition: all $transition-base;
+        
+        &.active {
+            background: $primary-color;
+            transform: scale(1.2);
+        }
+        
+        &:hover:not(.active) {
+            background: rgba($primary-color, 0.6);
+        }
+    }
+}
+
+.carousel-counter {
+    position: absolute;
+    top: $spacing-md;
+    right: $spacing-md;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: $font-weight-medium;
+    z-index: 10;
+}
