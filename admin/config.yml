@@ -2,8 +2,6 @@ backend:
   name: github
   repo: kenalba/art-portfolio-jekyll-site
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 # These lines should *not* be indented
 media_folder: "assets/images/projects"
