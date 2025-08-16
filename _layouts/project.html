@@ -38,7 +38,7 @@ layout: default
                     {% case block.type %}
                         {% when "image" %}
                             <figure class="gallery-item">
-                                <img src="{{ block.filename }}" alt="{{ block.alt | default: page.title }}" loading="lazy">
+                                <img src="{{ block.filename | relative_url }}" alt="{{ block.alt | default: page.title }}" loading="lazy">
                                 {% if block.caption %}
                                     <figcaption>{{ block.caption }}</figcaption>
                                 {% endif %}
