@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: kenalba/art-portfolio-jekyll-site
   branch: main
 
 # These lines should *not* be indented
@@ -9,7 +10,7 @@ public_folder: "/assets/images/projects"
 # Optional: Logo and site info
 site_url: https://kenalba.github.io/art-portfolio-jekyll-site
 display_url: https://kenalba.github.io/art-portfolio-jekyll-site
-logo_url: https://kenalba.github.io/art-portfolio-jekyll-site/assets/images/logo.png  # Optional
+# logo_url: https://kenalba.github.io/art-portfolio-jekyll-site/assets/images/logo.png  # Optional - add logo later
 
 collections:
   # Professional Projects
