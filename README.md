@@ -159,9 +159,10 @@ Edit variables in `_sass/_variables.scss`:
    - Name it something like `l_e_portfolio` or use your desired name
 
 2. **Update Configuration:**
-   - Edit `_config.yml` and update the `url` field:
+   - Edit `_config.yml` and update both the `url` and `baseurl` fields:
    ```yaml
    url: "https://yourusername.github.io/your-repo-name"
+   baseurl: "/your-repo-name"
    ```
 
 3. **Push to GitHub:**
@@ -249,6 +250,12 @@ Edit variables in `_sass/_variables.scss`:
 - Check your version: `ruby --version`
 - If using rbenv, ensure it's working: `which ruby` (should show path with `.rbenv`)
 - Restart your terminal after rbenv installation
+
+**CSS/JS not loading on GitHub Pages:**
+- Ensure `baseurl` is set correctly in `_config.yml`
+- For GitHub Pages, `baseurl` should be `/your-repository-name`
+- Hard refresh your browser (Ctrl+F5 or Cmd+Shift+R) after deployment
+- Wait 2-3 minutes after pushing changes for GitHub Pages to rebuild
 
 ### Getting Help
 
