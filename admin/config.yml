@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: kenalba/art-portfolio-jekyll-site
-  branch: main
+  name: test-repo
 
 # These lines should *not* be indented
 media_folder: "assets/images/projects"
