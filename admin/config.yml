@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: kenalba/art-portfolio-jekyll-site
   branch: main
 
 # These lines should *not* be indented
