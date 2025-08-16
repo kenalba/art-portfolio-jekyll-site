@@ -6,7 +6,7 @@ permalink: /contact/
 
 ## Let's Work Together
 
-I'm always interested in new projects, especially those involving space, NASA, technical illustration, and educational materials. Whether you need a single illustration or a comprehensive visual identity, I'd love to hear about your project.
+I'm always interested in new projects, especially those involving space, NASA, technical illustration, and educational materials. Whether you need a single illustration or a comprehensive visual identity, I'd love to hear about your project!
 
 ### Get In Touch
 
@@ -38,4 +38,4 @@ I typically book projects 2-4 weeks in advance, though I can sometimes accommoda
 
 ---
 
-*Based in [Your Location] and available for remote work worldwide.*
+_Based in [Your Location] and available for remote work worldwide._
