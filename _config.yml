@@ -3,8 +3,8 @@ title: L.E. Portfolio
 email: contact@example.com
 description: >-
   Professional illustration portfolio showcasing space, NASA, and technical design work
-baseurl: ""
-url: "https://ellee-portfolio.netlify.app"
+baseurl: "/art-portfolio-jekyll-site"
+url: "https://kenalba.github.io/art-portfolio-jekyll-site"
 
 # Build settings
 markdown: kramdown

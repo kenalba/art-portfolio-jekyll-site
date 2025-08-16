@@ -60,7 +60,7 @@ images:
 
 ### The Site Updates Automatically
 
-- Every time you save changes, Netlify rebuilds the site (takes 2-3 minutes)
-- Check https://ellee-portfolio.netlify.app to see your changes
+- Every time you save changes, GitHub Pages rebuilds the site (takes 2-5 minutes)
+- Check https://kenalba.github.io/art-portfolio-jekyll-site to see your changes
 
 This is actually much simpler than any CMS - GitHub's web editor is clean and works great!
